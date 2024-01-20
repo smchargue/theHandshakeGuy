@@ -1,2 +1,1 @@
-# Hello World
-This will be my long overdue blog site. 
+This is the index file of what will be my long overdue blog site. 

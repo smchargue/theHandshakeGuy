@@ -1,4 +1,6 @@
-theme: minima,
-title: The Handshake Guy,
-author: Steve McHargue,
+---
+theme: minima
+title: The Handshake Guy
+author: Steve McHargue
 description: Tips and Code for next level sites using Aderant Handshake
+---

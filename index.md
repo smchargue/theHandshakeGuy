@@ -10,3 +10,15 @@ Although I am semi-retired now, I still enjoy doing challenging and fun things w
 ### January 2024
 - Lazy Loading a Handshake Skin
 
+##### Sample
+
+Here is some SQL
+```sql
+SELECT * FROM dbNameHere where field = 'a string'
+```
+
+and some JS
+```js
+let elements = document.querySelectorAll('.thisclass');
+elements.foreEach( (elem) => console.log(elem.classLsit));
+```

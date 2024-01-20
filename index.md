@@ -1,4 +1,2 @@
----
-title: Welcome to my blog
----
-
+# Hello World
+This will be my long overdue blog site. 

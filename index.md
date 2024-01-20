@@ -5,22 +5,8 @@ I have been in the Legal Technology field for four decades. (Day 1 - July 28th, 
 
 Although I am semi-retired now, I still enjoy doing challenging and fun things with Handshake Software.
 
-[readme linke](/blob/main/README.md)
-
 ## Index of Posts 
 
 ### January 2024
 - [Lazy Loading a Handshake Skin](_posts/2024-01-20-LazyLoadingSkins.md)
 
-##### Sample
-
-Here is some SQL
-```sql
-SELECT * FROM dbNameHere where field = 'a string'
-```
-
-and some JS
-```js
-let elements = document.querySelectorAll('.thisclass');
-elements.foreEach( (elem) => console.log(elem.classLsit));
-```

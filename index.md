@@ -5,6 +5,8 @@ I have been in the Legal Technology field for four decades. (Day 1 - July 28th, 
 
 Although I am semi-retired now, I still enjoy doing challenging and fun things with Handshake Software.
 
+[readme](./readme.md)
+
 ## Index of Posts 
 
 ### January 2024

@@ -8,7 +8,7 @@ Although I am semi-retired now, I still enjoy doing challenging and fun things w
 ## Index of Posts 
 
 ### January 2024
-- Lazy Loading a Handshake Skin
+- [Lazy Loading a Handshake Skin](_posts/2024-01-20-LazyLoadingSkins.md)
 
 ##### Sample
 

@@ -1,6 +1,7 @@
 ---
 title: "Lazy Loading Handshake Skins"
 date: 2024-01-20
+tags: Performance JavaScript
 ---
 
 ## What is Lazy Loading?
@@ -15,9 +16,6 @@ To set this up we replace the normal RenderSkin widget with an EmbeddedHTML elem
 
 Before setting up the lazy load process, the skin would have been rendered like this:
 
-include codeheader.html here also.
-
-{% include codeheader.html %}
 ```xml
 <div>
     <RenderSkin skin="SWM-Home-MyKPI">

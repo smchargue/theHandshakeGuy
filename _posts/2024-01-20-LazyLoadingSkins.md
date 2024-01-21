@@ -28,6 +28,7 @@ Before setting up the lazy load process, the skin would have been rendered like 
 
 For lazy load, we mimic that pretty closely, using standard html markup like this:
 
+{% include codeheader.html %}
 ```xml
 <div>
     <EmbeddedHtml>
@@ -46,6 +47,7 @@ Now we will need a programmatic way to detect when the element is visible in the
 
 Here is the code, which can be included in JavaScript block of skin which is rendering SWM-Home-MyKPI. 
 
+{% include codeheader.html %}
 ```js
 const LazyLoadSkins = document.querySelectorAll('.lazy-load-skin');
 
@@ -76,6 +78,8 @@ const LazyLoadSkinIObserver = new IntersectionObserver(lazyLoadSkin);
 // Start observing the target element
 LazyLoadSkins.forEach(renderSkin => LazyLoadSkinIObserver.observe(renderSkin));
 
+
+{% include codeheader.html %}
 ```
 Let's dissect this code in the order of things happening. First, we get an array of all the elements in the page with the lazy-load-skin class. 
 ```js
@@ -83,11 +87,15 @@ const LazyLoadSkins = document.querySelectorAll('.lazy-load-skin');
 ```
 
 Next, we need to create an instance of the IntersectionObserver object.  This constructor takes 2 parameters, the first is the callback that will contain the code that does the work.  The second, which we are not using, is the options object passed into the IntersectionObserver() constructor which let you control the circumstances under which the observer's callback is invoked. The defaults will work for us. 
+
+{% include codeheader.html %}
 ```js
 const LazyLoadSkinIObserver = new IntersectionObserver(lazyLoadSkin);
 ```
 
 Finally, with our intersection observer created, we will setup each element in the LazyLoadSkins array to be observed. 
+
+{% include codeheader.html %}
 ```js
 LazyLoadSkins.forEach(renderSkin => LazyLoadSkinIObserver.observe(renderSkin));
 ```
@@ -97,24 +105,34 @@ Now, there is nothing to do except wait until the element becomes visible in the
 Step by step through the lazyLoadSkin function we perform the following:
 
 1. Use the array map method to step through each instance on an entry
+
+{% include codeheader.html %}
 ```js
     entries.map((entry) => {
 ```
 2. If this entry has become visible in the viewport, then entry.isIntersection is true
+
+{% include codeheader.html %}
 ```js
     if (entry.isIntersecting) {
 ```
 3. We only want to run this code once, and then stop observering it.  This is done with the unobserve method.
+
+{% include codeheader.html %}
 ```js
     LazyLoadSkinIObserver.unobserve(entry.target); 
 ```
 4. Display a block of text in the target element's parent container, which will automatically be replaced with the skin when it renders.
+
+{% include codeheader.html %}
 ```js 
     let element = entry.target.parentElement;
     let msg = entry.target.dataset.loadingmessage || "Loading content, this might take a moment..."            
     jQuery(element).html(`<div class="lazy-skin-loading-message">${msg}</div>`);
 ```
 5. Map the data attributes of the target to the Handshake Properties of the target's Parent. Note: use the value of data-skinname to add the required property name _HS_ControlType.  
+
+{% include codeheader.html %}
 ```js
     for (let key in entry.target.dataset) {
         HSSetProperty(element, key, entry.target.dataset[key])
@@ -123,6 +141,8 @@ Step by step through the lazyLoadSkin function we perform the following:
     properties += "&_HS_ControlType=" + escape(entry.target.dataset.skinname);
 ```
 6. Finally, use the Handshake Function HSRenderSkinAsynch to render the skin with the computed properties.  The skin element will be rendered as a child to the target's parent element, replacing the original .lazy-skin-load div that was setup in the embedded html.
+
+{% include codeheader.html %}
 ```js
     HSRenderSkinAsync(webService, kendo.htmlEncode(properties), element, function () {
         _hsEvalScripts(element);      

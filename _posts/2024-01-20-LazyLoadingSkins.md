@@ -14,6 +14,7 @@ While you would normally use the Handshake Widget RenderSkin to do this work, we
 To set this up we replace the normal RenderSkin widget with an EmbeddedHTML element. In the content property for this element we add a DIV and give it a class of ```.lazy-load-skin```.  Along with that class name, we provide several data attributes. Only one, data-skinname, will be required. Any additional data attributes will be passed as input properties to the skin. An optional data attribute name loadingMessage can be used to control what is displayed in the div until the skin is loaded. 
 
 Before setting up the lazy load process, the skin would have been rendered like this:
+{% include /_includes/codeHeader.html %}
 ```xml
 <div>
     <RenderSkin skin="SWM-Home-MyKPI">

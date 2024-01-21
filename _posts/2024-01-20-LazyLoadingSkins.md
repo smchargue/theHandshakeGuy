@@ -16,7 +16,7 @@ To set this up we replace the normal RenderSkin widget with an EmbeddedHTML elem
 
 Before setting up the lazy load process, the skin would have been rendered like this:
 
-{% include codeHeader.html %}
+{% include codeheader.html %}
 ```xml
 <div>
     <RenderSkin skin="SWM-Home-MyKPI">

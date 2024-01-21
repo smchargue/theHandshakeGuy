@@ -17,7 +17,7 @@ Before setting up the lazy load process, the skin would have been rendered like 
 
 include codeheader.html here also.
 
-{% include codeHeader.html %}
+{% include codeheader.html %}
 ```xml
 <div>
     <RenderSkin skin="SWM-Home-MyKPI">

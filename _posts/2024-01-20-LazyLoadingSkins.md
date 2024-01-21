@@ -93,25 +93,25 @@ Now, there is nothing to do except wait until the element becomes visible in the
 
 Step by step through the lazyLoadSkin function we perform the following:
 
-a. Use the array map method to step through each instance on an entry
+1. Use the array map method to step through each instance on an entry
 ```js
     entries.map((entry) => {
 ```
-b. If this entry has become visible in the viewport, then entry.isIntersection is true
+2. If this entry has become visible in the viewport, then entry.isIntersection is true
 ```js
     if (entry.isIntersecting) {
 ```
-c. We only want to run this code once, and then stop observering it.  This is done with the unobserve method.
+3. We only want to run this code once, and then stop observering it.  This is done with the unobserve method.
 ```js
     LazyLoadSkinIObserver.unobserve(entry.target); 
 ```
-d. Display a block of text in the target element's parent container, which will automatically be replaced with the skin when it renders.
+4. Display a block of text in the target element's parent container, which will automatically be replaced with the skin when it renders.
 ```js 
     let element = entry.target.parentElement;
     let msg = entry.target.dataset.loadingmessage || "Loading content, this might take a moment..."            
     jQuery(element).html(`<div class="lazy-skin-loading-message">${msg}</div>`);
 ```
-e. Map the data attributes of the target to the Handshake Properties of the target's Parent. Note: use the value of data-skinname to add the required property name _HS_ControlType.  
+5. Map the data attributes of the target to the Handshake Properties of the target's Parent. Note: use the value of data-skinname to add the required property name _HS_ControlType.  
 ```js
     for (let key in entry.target.dataset) {
         HSSetProperty(element, key, entry.target.dataset[key])
@@ -119,7 +119,7 @@ e. Map the data attributes of the target to the Handshake Properties of the targ
     let properties = HSComputeProperties(HSFindParent(element));
     properties += "&_HS_ControlType=" + escape(entry.target.dataset.skinname);
 ```
-Finally, use the Handshake Function HSRenderSkinAsynch to render the skin with the computed properties.  The skin element will be rendered as a child to the target's parent element, replacing the original .lazy-skin-load div that was setup in the embedded html.
+6. Finally, use the Handshake Function HSRenderSkinAsynch to render the skin with the computed properties.  The skin element will be rendered as a child to the target's parent element, replacing the original .lazy-skin-load div that was setup in the embedded html.
 ```js
     HSRenderSkinAsync(webService, kendo.htmlEncode(properties), element, function () {
         _hsEvalScripts(element);      

@@ -2,11 +2,6 @@
 ---
 @import "{{ site.theme }}";
 
-.highlighter-rouge {
-  background-color: #ddd;
-  padding: 1em 1em;
-}
-
 .code-header:has(+ .highlighter-rouge:hover) {
   display: block;
 }

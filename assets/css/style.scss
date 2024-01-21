@@ -2,6 +2,10 @@
 ---
 @import "{{ site.theme }}";
 
+.highlighter-rouge pre.highlight {
+    padding:1em 1em;
+}
+
 .code-header:has(+ .highlighter-rouge:hover) {
   display: block;
 }

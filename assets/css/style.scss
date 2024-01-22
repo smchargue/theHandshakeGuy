@@ -11,26 +11,28 @@
 }
 
 .code-header {
-    &:hover {
-        display:block;
-        .copy-code-button {
-           background-color:#333;
-            border: solid 1px #bbb;
-            padding: 0.25rem 0.25rem;
-            color: #fff;
-        }
+  --color-code-text: hsl(0deg 0% 83%);
+  --color-code-surface: hsl(0deg 0% 23%);
+  &:hover {
+    display: block;
+    .copy-code-button {
+      background-color: var(--color-code-text);
+      color: var(--color-code-surface);
     }
+  }
   display: none;
   position: relative;
   .copy-code-button {
     position: absolute;
     cursor: pointer;
-    width: 3em;
+    width: 4.5em;
     right: 1.25em;
     top: 1em;
-      background-color: transparent;
-            border: solid 1px #bbb;
-            padding: 0.25rem 0.25rem;
-            color: #777;
+    border-radius: 4px;
+    padding: 0.5rem 0.5rem;
+    margin: auto auto;
+    border: 0;
+    background-color: var(--color-code-surface);
+    color: var(--color-code-text);
   }
 }

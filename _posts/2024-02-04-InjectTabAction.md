@@ -1,6 +1,7 @@
 ---
 title: "Injecting a tab action in an HTML5TabStrip widget"
 date: 2024-02-05
+tags: HTML5TabStrip JavaScript
 ---
 
 ## Summary
@@ -67,7 +68,7 @@ Suppose we didn't just want to open Bing but pass it some value we had on this p
 {% include codeheader.html %}
 ```js
 function addActionTab(element) {
-    const bing = 'https://www.bing.com/search?q=';
+    let bing = 'https://www.bing.com/search?q=';
     let tab = jQuery(`<li class="k-item hs-actiontab">
                     <div class="k-link">Open Bing Search</div>
                   </li>`);
@@ -75,8 +76,12 @@ function addActionTab(element) {
     tab.on('click', (e) => {
         let elem = e.currentTarget; // this will be the DOM Element
         let clientName = HSGetProperty(elem, 'clientname');
-        let url = bing + encodeURIComponent(clientName);
-        window.open(url, "_blank");
+        bing += encodeURIComponent(clientName);
+        
+        // or, if you prefer terse code. 
+        // bing += encodeURIComponent(HSGetProperty(e.currentTarget, 'clientname'))
+
+        window.open(bing, "_blank");
         return false;
     })
 }

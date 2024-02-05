@@ -27,6 +27,7 @@ The one we what for our purpose is **OnLoad**.  When the OnLoad code executes th
 
 Create a function similar to the one below in your skin, where will we pass in the element jQuery object.
 
+{% include codeheader.html %}
 ```js
 function addActionTab(element) {
     const bing = 'https://www.bing.com';
@@ -57,9 +58,13 @@ All that is left is some cosmetic details. I will usually want this special acti
 }
 ```
 
+## Example Screen Shot
+![sample tab](/assets/images/sample-inject-tab.png)
+
 ## More advanced functionality
 Suppose we didn't just want to open Bing but pass it some value we had on this particular page.  For example if this tab was being rendered on a client page we might have **clientname** being provided as an intake property.  In this case, we can retrieve the value of client name and add that to the bing url.
 
+{% include codeheader.html %}
 ```js
 function addActionTab(element) {
     const bing = 'https://www.bing.com/search?q=';

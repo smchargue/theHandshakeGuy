@@ -18,7 +18,7 @@ The HTMLTabStrip provides several properties to execute code associated with tab
 
 - **OnInitialize** - execute code before the TabStrip is created. 
 - **OnLoad** - execute code when the TabStrip is first loaded.
-- **OnActivateTab** - execute code every time a tab is activated, including the when first rendered. 
+- **OnActivateTab** - execute code every time a tab is activated, including the when the first tab rendered. 
 
 The one we what for our purpose is **OnLoad**.  When the OnLoad code executes there are several key variables in scope:
 

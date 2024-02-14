@@ -77,8 +77,6 @@ const LazyLoadSkinIObserver = new IntersectionObserver(lazyLoadSkin);
 
 // Start observing the target element
 LazyLoadSkins.forEach(renderSkin => LazyLoadSkinIObserver.observe(renderSkin));
-
-{% include codeheader.html %}
 ```
 Let's dissect this code in the order of things happening. First, we get an array of all the elements in the page with the lazy-load-skin class. 
 

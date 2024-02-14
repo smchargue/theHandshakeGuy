@@ -24,7 +24,7 @@ The one we what for our purpose is **OnLoad**.  When the OnLoad code executes th
 
 - **tabStripId**: this will be the HS generated ID of the TabStrip
 - **element**: the jQuery reference to the TabStrip DOM element, i.e. ```jQuery('#' + tabStripId);```
-- **tabStripName** = the name you provided in the Name property of the TabStrip.
+- **tabStripName**: the name you provided in the Name property of the TabStrip.
 
 Create a function similar to the one below in your skin, where will we pass in the element jQuery object.
 
@@ -43,7 +43,7 @@ function addActionTab(element) {
 }
 ```
 
-Nothing overly complex here.  We create a jQuery element with styling simpler to normal tab elements. We then append it to the list of k-tabstrip-items. And finally set an eventListener to the click event of the new tab. It is in the click event we execute the code we want. 
+Nothing overly complex here.  We create a jQuery element with markup simpler to a normal tab item. We then append it to the list of k-tabstrip-items. And finally set an eventListener to the click event of the new tab. It is in the click event we execute the code we want. 
 
 Important: return false in this event listener so that the tab is not actually activated and thereby showing an empty content container. 
 

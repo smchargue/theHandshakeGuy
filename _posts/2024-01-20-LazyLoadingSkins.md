@@ -52,23 +52,22 @@ Here is the code, which can be included in JavaScript block of skin which is ren
 const LazyLoadSkins = document.querySelectorAll('.lazy-load-skin');
 
 function lazyLoadSkin(entries) {
-    entries.map((entry) => {
+    entries.forEach((entry) => { // Change map to forEach
         if (entry.isIntersecting) {
-            let msg = entry.target.dataset.loadingmessage || "Loading content, this might take a moment..."
+            const msg = entry.target.dataset.loadingmessage || "Loading content, this might take a moment..."; // Changed to const
             LazyLoadSkinIObserver.unobserve(entry.target); 
             
-            let element = entry.target.parentElement;
+            const element = entry.target.parentElement; // Changed to const
             jQuery(element).html(`<div class="lazy-skin-loading-message">${msg}</div>`);
             for (let key in entry.target.dataset) {
-                HSSetProperty(element, key, entry.target.dataset[key])
+                HSSetProperty(element, key, entry.target.dataset[key]);
             }
             let properties = HSComputeProperties(HSFindParent(element));
             properties += "&_HS_ControlType=" + escape(entry.target.dataset.skinname);
             HSRenderSkinAsync(webService, kendo.htmlEncode(properties), element, function () {
                 _hsEvalScripts(element);      
-            });            
+            });
         }
-
     });
 }
 
@@ -77,6 +76,7 @@ const LazyLoadSkinIObserver = new IntersectionObserver(lazyLoadSkin);
 
 // Start observing the target element
 LazyLoadSkins.forEach(renderSkin => LazyLoadSkinIObserver.observe(renderSkin));
+
 ```
 Let's dissect this code in the order of things happening. First, we get an array of all the elements in the page with the lazy-load-skin class. 
 

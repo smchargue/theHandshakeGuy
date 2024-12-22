@@ -54,10 +54,10 @@ const LazyLoadSkins = document.querySelectorAll('.lazy-load-skin');
 function lazyLoadSkin(entries) {
     entries.forEach((entry) => { 
         if (entry.isIntersecting) {
-            const msg = entry.target.dataset.loadingmessage || "Loading content, this might take a moment..."; // Changed to const
+            const msg = entry.target.dataset.loadingmessage || "Loading content, this might take a moment...";
             LazyLoadSkinIObserver.unobserve(entry.target); 
             
-            const element = entry.target.parentElement; // Changed to const
+            const element = entry.target.parentElement;
             jQuery(element).html(`<div class="lazy-skin-loading-message">${msg}</div>`);
             for (let key in entry.target.dataset) {
                 HSSetProperty(element, key, entry.target.dataset[key]);

@@ -52,7 +52,7 @@ Here is the code, which can be included in JavaScript block of skin which is ren
 const LazyLoadSkins = document.querySelectorAll('.lazy-load-skin');
 
 function lazyLoadSkin(entries) {
-    entries.forEach((entry) => { // Change map to forEach
+    entries.forEach((entry) => { 
         if (entry.isIntersecting) {
             const msg = entry.target.dataset.loadingmessage || "Loading content, this might take a moment..."; // Changed to const
             LazyLoadSkinIObserver.unobserve(entry.target); 

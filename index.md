@@ -7,7 +7,9 @@ Although I am semi-retired now, I still enjoy doing challenging and fun things w
 
 ## Index of Posts 
 
-### Jan-Mar 2024
+### 2024
 - [Lazy Loading a Handshake Skin](_posts/2024-01-20-LazyLoadingSkins.md)
 - [Inject an Action Tab](_posts/2024-02-04-InjectTabAction.md)
 
+### 2025 
+- [Handshake ISS Cache Challenges](_posts/2025-03-20-HandshakeIISCacheChanges.md)

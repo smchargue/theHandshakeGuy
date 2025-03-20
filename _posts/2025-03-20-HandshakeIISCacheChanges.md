@@ -12,7 +12,7 @@ Below are the steps to resolve this issue.
 
 In the IIS Manager of the Handshake Server, add an entry to Output Caching for `.css` and `.js` files to 'cache until change.'
 
-![Output Caching Screenshot](/assets/images/ss1.png)
+![Output Caching Screenshot](/assets/images/iis-ss1.png)
 
 ## Handshake Theme Changes
 The update above will cover all files in the `HandshakeWebServices` root. However, the `HandshakeThemes` application does not work with this change due to how the Handshake Server handles those particular files.
@@ -30,7 +30,7 @@ To address this, we need to move the CSS files from the `Themes` folder so that 
     ```
 
 5. Run the Handshake Configuration Utility to load this `redirect.css` file in the Themes settings.
-   ![Theme Changes Screenshot](/assets/images/ss2.png)
+   ![Theme Changes Screenshot](/assets/images/iis-ss2.png)
 
 6. In IIS, add a new application under `HS_Site` named `css`, point it to `./HandshakeWebServices/css`, and:
     - Add `Access-Control-Allow-Origin=*` to the HTTP Response Headers. This will allow font files to load from this folder across domains.

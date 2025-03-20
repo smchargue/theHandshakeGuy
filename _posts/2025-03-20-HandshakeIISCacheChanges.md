@@ -22,17 +22,18 @@ To address this, we need to move the CSS files from the `Themes` folder so that 
 1. Create a new folder named `css` under `\Program Files\Handshake\HandshakeWebServices`.
 2. Copy the current active `Themes` folder to the new `css` folder.
 3. In the active `Themes` folder, leave a single CSS file that imports from the new CSS location:
-4. 
-    {% include codeheader.html %}
+
     `C:\Program Files\Handshake\HandshakeThemes\Themes\<yourtheme>\redirect.css`
+
+    {% include codeheader.html %}
     ```css
     @import "https://<yourhsroot>.<yourdomain>.com/css/<corecss>.min.css";
     ```
 
-5. Run the Handshake Configuration Utility to load this `redirect.css` file in the Themes settings.
+1. Run the Handshake Configuration Utility to load this `redirect.css` file in the Themes settings.
    ![Theme Changes Screenshot](/assets/images/iis-ss2.png)
 
-6. In IIS, add a new application under `HS_Site` named `css`, point it to `./HandshakeWebServices/css`, and:
+2. In IIS, add a new application under `HS_Site` named `css`, point it to `./HandshakeWebServices/css`, and:
     - Add `Access-Control-Allow-Origin=*` to the HTTP Response Headers. This will allow font files to load from this folder across domains.
     - Set Authentication to allow anonymous access
 

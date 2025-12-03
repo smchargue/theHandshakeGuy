@@ -13,3 +13,4 @@ Although I am semi-retired now, I still enjoy doing challenging and fun things w
 
 ### 2025 
 - [Handshake ISS Cache Challenges](_posts/2025-03-20-HandshakeIISCacheChanges.md)
+- [SPModals in Handshake and SP Online](_posts/2025-12-03-SPModals.md)
